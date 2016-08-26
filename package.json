@@ -5,6 +5,10 @@
   "scripts": {
     "build": "rollup --config; cp src/index.html dist/"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://gitlab.com/czottmann/es6-browser-prototyping-sandbox.git"
+  },
   "author": "Carlo Zottmann <carlo@zottmann.org>",
   "license": "WTFPL",
   "devDependencies": {
