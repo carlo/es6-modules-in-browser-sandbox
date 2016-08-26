@@ -1,0 +1,17 @@
+{
+  "name": "es6-browser-prototyping-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "rollup --config; cp src/index.html dist/"
+  },
+  "author": "Carlo Zottmann <carlo@zottmann.org>",
+  "license": "WTFPL",
+  "devDependencies": {
+    "rollup": "^0.34.10",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-commonjs": "^3.3.1",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "titleize": "^1.0.0"
+  }
+}
