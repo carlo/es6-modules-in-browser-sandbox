@@ -33,6 +33,15 @@ is pretty solid by now.  Not perfect, but we're getting there.
 Running node 6, just do a `npm install` to set up the dependencies.
 
 
+### npm tasks
+
+- `start`: **main task**, starts HTTP server and FS watcher
+- `build`: generates the JS bundle in `dist/` & copies the `index.html` there
+- `serve`: fires up `http-server` on port 8080
+- `watch`: continuously listens for changes in the JS files and triggers the
+  build process
+
+
 ### Building
 
 `npm run build` will take the code from `src/`, roll the dice and put the
