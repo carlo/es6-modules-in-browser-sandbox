@@ -1,21 +1,30 @@
 {
   "name": "es6-browser-prototyping-sandbox",
-  "version": "1.0.0",
+  "author": "Carlo Zottmann <carlo@zottmann.org>",
+  "license": "WTFPL",
+  "version": "1.1.0",
   "description": "",
-  "scripts": {
-    "build": "rollup --config; cp src/index.html dist/"
-  },
   "repository": {
     "type": "git",
     "url": "git://gitlab.com/czottmann/es6-browser-prototyping-sandbox.git"
   },
-  "author": "Carlo Zottmann <carlo@zottmann.org>",
-  "license": "WTFPL",
   "devDependencies": {
+    "http-server": "^0.9.0",
+    "npm-run-all": "^3.0.0",
+    "npm-watch": "^0.1.6",
     "rollup": "^0.34.10",
     "rollup-plugin-babel": "^2.6.1",
     "rollup-plugin-commonjs": "^3.3.1",
     "rollup-plugin-node-resolve": "^2.0.0",
     "titleize": "^1.0.0"
+  },
+  "watch": {
+    "build": "src/**.js"
+  },
+  "scripts": {
+    "build": "rollup --config && cp src/index.html dist/",
+    "serve": "http-server dist/",
+    "start": "npm-run-all -p serve watch",
+    "watch": "npm-watch"
   }
 }
