@@ -24,8 +24,10 @@ So, to recap, this here setup …
 
 ### Why?
 
-Because [browser support for ES6](http://kangax.github.io/compat-table/es6/)
-is pretty solid by now.  Not perfect, but we're getting there.
+Because [browser support for ES6](http://kangax.github.io/compat-table/es6/) is
+pretty solid by now.  Not perfect, but we're getting there.  I understand why
+it's highly advised to compile ES6 code to ES5 for production use -- but for
+simple prototyping and tinkering I don't want that anymore.
 
 
 ### Setup
