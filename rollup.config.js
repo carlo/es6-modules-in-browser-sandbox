@@ -9,6 +9,11 @@
 // Website: https://github.com/rollup/rollup-plugin-commonjs
 import commonjs from 'rollup-plugin-commonjs';
 
+// Insert node globals including so code that works with browserify should work
+// even if it uses process or buffers.
+// Website: https://github.com/calvinmetcalf/rollup-plugin-node-globals
+import nodeGlobals from 'rollup-plugin-node-globals';
+
 // Locate modules using the Node resolution algorithm, for using third party
 // modules in `node_modules/`.
 // Website: https://github.com/rollup/rollup-plugin-node-resolve
@@ -18,7 +23,6 @@ export default {
   dest: 'dist/bundle.js',
   entry: 'src/main.js',
   format: 'iife',
-  intro: 'const global = (typeof window !== "undefined" ? window : (typeof global !== "undefined" ? global : (typeof self !== "undefined" ? self : {})));',
   plugins: [
     // babel({
     //   exclude: 'node_modules/**',
@@ -29,8 +33,13 @@ export default {
       main: true,
     }),
     commonjs({
+      exclude: [
+        'node_modules/rollup-plugin-node-globals/**',
+        'node_modules/process-es6/**',
+      ],
       include: 'node_modules/**',
     }),
+    nodeGlobals(),
   ],
   sourceMap: true,
 };
