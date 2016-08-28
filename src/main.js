@@ -1,9 +1,23 @@
-import outputOne from './output_one';
-import outputTwo from './output_two';
+import h from 'react-hyperscript';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// This serves only as example for a module loaded from `node_modules/`.
-import titleize from 'titleize';
 
-console.log(
-  titleize(`${ outputOne(42) } and ${ outputTwo }`)
+class BorkBork extends React.Component {
+
+  render() {
+    return (
+      h('div', [
+        h('h3#headline', 'React is go!'),
+        h('p', 'This is the best day of my life.'),
+      ])
+    );
+  }
+
+}
+
+
+ReactDOM.render(
+  React.createElement(BorkBork),
+  document.querySelector('#component')
 );
