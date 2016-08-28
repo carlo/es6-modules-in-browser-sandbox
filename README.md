@@ -10,7 +10,7 @@ Remember, the entire thing is targetted at prototyping stuff in ES6-capable
 browsers. For good measure the HTML page includes the right polyfills for the
 currently active browser, c/o [polyfill.io](https://polyfill.io/v2/docs/).
 
-**THIS IS STILL A WORK IN PROGRESS.** Also, I might loose interest tomorrow.
+**THIS IS STILL A WORK IN PROGRESS.** Also, I might lose interest tomorrow.
 
 So, to recap, this here setup …
 
