@@ -10,8 +10,8 @@
   },
   "devDependencies": {
     "http-server": "^0.9.0",
+    "nodemon": "^1.10.2",
     "npm-run-all": "^3.0.0",
-    "npm-watch": "^0.1.6",
     "rollup": "^0.34.10",
     "rollup-plugin-babel": "^2.6.1",
     "rollup-plugin-commonjs": "^3.3.1",
@@ -19,13 +19,14 @@
     "rollup-plugin-node-resolve": "^2.0.0",
     "titleize": "^1.0.0"
   },
-  "watch": {
-    "build": "src/**.js"
-  },
   "scripts": {
-    "build": "rollup --config && cp src/index.html dist/",
+    "build:html": "cp src/*.html dist/",
+    "build:js": "rollup --config",
+    "build": "npm-run-all -p build:*",
     "serve": "http-server dist/",
     "start": "npm-run-all -p serve watch",
-    "watch": "npm-watch"
+    "watch:html": "nodemon --watch src --ext html --exec npm run build:html",
+    "watch:js": "nodemon --watch src --exec npm run build:js",
+    "watch": "npm-run-all -p watch:*"
   }
 }
