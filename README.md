@@ -34,23 +34,23 @@ simple prototyping and tinkering I don't want that anymore.
 
 Running node 6, just do a `npm install` to set up the dependencies.
 
+Do a `npm run start`, then open `http://127.0.0.1:8080/index.html` in your
+browser and check its Web Inspector.
+
 
 ### npm tasks
 
-- `start`: **main task**, starts HTTP server and FS watcher
-- `build`: generates the JS bundle in `dist/` & copies the `index.html` there
+- `start`: **main task**, runs `build` task once, then starts HTTP server and
+  FS watcher
+- `build:html`: copies all HTML files in `src/` to `dist/`
+- `build:js`: generates the JS bundle in `dist/`
+- `build`: runs all available build tasks
 - `serve`: fires up `http-server` on port 8080
-- `watch`: continuously listens for changes in the JS files and triggers the
-  build process
-
-
-### Building
-
-`npm run build` will take the code from `src/`, roll the dice and put the
-output in `dist/`.
-
-Once done, open `dist/index.html` in your browser and check its Web
-Inspector.
+- `watch:html`: continuously listens for changes in HTML files and triggers
+  `build:html` task
+- `watch:js`: continuously listens for changes in JS files and triggers the
+  `build:js` task
+- `watch`: runs all available watch tasks
 
 
 ## License
